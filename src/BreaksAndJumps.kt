@@ -13,10 +13,10 @@ fun main(){
     }
 
     println("<=================Inner Loop Example==========>")
-    for (i in 1..10){
+    loop@ for (i in 1..10){
         println("Number:$i")
         for (innerloop in 1..100){
-            if (innerloop == 23) break
+            if (innerloop == 23) break@loop
         println("Innerloop:$innerloop")
         }
     }
