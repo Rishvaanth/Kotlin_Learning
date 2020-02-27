@@ -1,6 +1,8 @@
+import java.util.*
+
 fun main(){
     println("<===========Pets Program============>")
-    val listOfPets = ArrayList<String>()
+    val listOfPets = LinkedList<String>()
     var u = 1
     do {
         print("Enter name of Pet $u or exit to quit:")
