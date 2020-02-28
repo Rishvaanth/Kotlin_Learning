@@ -1,6 +1,6 @@
 package com.car.maintain
 
-class CarOptions()
+open class CarOptions()
     {
         var type:String?=null
         var model:Int?=null
