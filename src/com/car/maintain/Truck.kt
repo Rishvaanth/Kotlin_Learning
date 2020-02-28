@@ -9,6 +9,13 @@ class Truck: CarOptions{
     constructor(type: String, model: Int, price: Double, milesDriven: Double, subType: String):super(type, model, price, milesDriven){
         this.subType = subType
     }
+    override fun getCarPrice():Double{
+        return this.getPrice()-(this.milesDriven!!.toDouble()*20)
+    }
+
+    fun getCarPriceWrapper():Double{
+        return super.getCarPrice()                                               //Super is for inheriting objects from parent class
+    }                                                                            //This keyword is pointing towards objects in the current class
 
 }
 fun main(){
@@ -17,10 +24,10 @@ fun main(){
     val truck3 = Truck("Audi", 2005, 20500.123, 123.1, "Freight")
     println(truck1.milesDriven)
     println(truck2.owner)
-    println("Effective Price of the car is ${truck3.getCarPrice()}")
+    println("Effective Price of the truck is ${truck3.getCarPrice()}")
+    println("Effective Price of the truck in norms of Car Price is ${truck3.getCarPriceWrapper()}")
     println(truck3.owner)
     println(truck1.type)
-    println(truck1.price)
     println(truck2.subType)
     println(truck1.subType)
 }

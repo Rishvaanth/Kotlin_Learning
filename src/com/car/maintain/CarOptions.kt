@@ -4,7 +4,7 @@ open class CarOptions()
     {
         var type:String?=null
         var model:Int?=null
-        var price:Double?=null
+        private var price:Double?=null
         var milesDriven:Double?=null
         var owner:String?=null
         constructor( type:String, model:Int, price:Double, milesDriven:Double, owner:String) : this() {
@@ -21,8 +21,11 @@ open class CarOptions()
             this.milesDriven = milesDriven
         }
 
-    fun getCarPrice():Double{
+    open fun getCarPrice():Double{
         return this.price!!-(this.milesDriven!!.toDouble()*10)
+    }
+    fun getPrice():Double{
+        return this.price!!
     }
 }
 
