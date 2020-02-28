@@ -1,6 +1,6 @@
 package com.car.maintain
 
-class Car(var type:String, val model:Int, val price:Double, val milesDriven:Double, val owner:String){
+class Car(var type:String, val model:Int, private val price:Double, val milesDriven:Double, val owner:String){
     init {
         println("Object Class Created!")
     }
