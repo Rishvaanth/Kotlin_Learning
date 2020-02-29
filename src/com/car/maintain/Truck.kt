@@ -10,13 +10,11 @@ class Truck: CarOptions{
         this.subType = subType
     }
     override fun getCarPrice():Double{
-        return this.getPrice()-(this.milesDriven!!.toDouble()*20)
+        return this.getPrice() -(this.milesDriven!!.toDouble()*20)
     }
-
-    fun Truck.getCarPriceWrapper():Double{
-        return this.getCarPrice()                                               //Super is for inheriting objects from parent class
-    }                                                                           //This keyword is pointing towards objects in the current class
-
+    fun getCarPriceWrapper():Double{
+        return super.getCarPrice()                                      //Car price from car options
+    }
 }
 fun main(){
     val truck1 = Truck("Ferrari", 2015, 10000.0, 2219.3, "Spike", "Dumper" )
@@ -25,7 +23,7 @@ fun main(){
     println(truck1.milesDriven)
     println(truck2.owner)
     println("Effective Price of the truck is ${truck3.getCarPrice()}")
-    println("Effective Price of the truck in norms of Car Price is ${truck3.getCarPrice()}")
+    println("Effective Price of the truck in norms of Car Price is ${truck3.getCarPriceWrapper()}")
     println(truck3.owner)
     println(truck1.type)
     println(truck2.subType)
