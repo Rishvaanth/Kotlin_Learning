@@ -12,9 +12,10 @@ class Truck: CarOptions{
     override fun getCarPrice():Double{
         return this.getPrice() -(this.milesDriven!!.toDouble()*20)
     }
-    fun getCarPriceWrapper():Double{
-        return super.getCarPrice()                                      //Car price from car options
-    }
+}
+
+fun Truck.getCarPriceWrapper():Double{
+    return this.getCarPrice()                                      //Extension
 }
 fun main(){
     val truck1 = Truck("Ferrari", 2015, 10000.0, 2219.3, "Spike", "Dumper" )
